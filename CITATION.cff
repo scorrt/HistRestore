@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "HistRestore: Evidence-Constrained Adaptive Restoration for Historical Document Images"
+message: "Please cite the associated manuscript if you use this code."
+authors:
+  - family-names: "Anonymous"
+    given-names: "Authors"
+year: 2026
+license: "NOASSERTION"
+

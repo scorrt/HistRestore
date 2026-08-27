@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "histrestore"
+version = "0.1.0"
+description = "Evidence-constrained adaptive restoration framework for historical document images."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "HistRestore Authors"}
+]
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "scipy",
+  "opencv-python",
+  "scikit-image",
+  "Pillow",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
