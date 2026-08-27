@@ -1,0 +1,11 @@
+dataset,split,samples,source_pages
+compound_proxy,train,90,45
+compound_proxy,val,30,15
+dibco18,train,7,7
+dibco18,val,3,3
+dibco19,train,19,19
+dibco19,val,1,1
+jung,train,72,72
+jung,val,15,15
+kligler,train,236,236
+kligler,val,64,64

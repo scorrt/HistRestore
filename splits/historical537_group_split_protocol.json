@@ -1,0 +1,12 @@
+{
+  "protocol": "source-page group split",
+  "split_key": "md5(dataset + ':' + source_page_id) % 5 == 0",
+  "source_page_id_rule": "remove leading six-digit index and trailing _vXX variant suffix",
+  "candidate_pool_rows": 11814,
+  "samples": 537,
+  "candidate_count_per_sample": {
+    "22": 537
+  },
+  "qwen_prior_file": "outputs\\qwen_degradation_prior_full_20260810.jsonl",
+  "main_result_csv": "outputs\\historical537_group_split_full_20260817\\historical537_group_main_results.csv"
+}

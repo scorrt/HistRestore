@@ -1,0 +1,5 @@
+method,leave_mmdir_pages,leave_mmdir_rate,moved_mean_gain_vs_mmdir,moved_mean_risk_vs_mmdir,moved_gain_pages,moved_loss_pages,moved_tie_pages,moved_candidate_counts
+gbdt_raw_prior,20,0.05305039787798409,2.7841489233251524,-0.10891867220915721,15,5,0,"[[""docres_deshadow"", 12], [""input_degraded"", 4], [""docres_input_blend_0.90"", 2], [""docres_input_blend_0.80"", 1], [""docres_classical040_blend_0.90"", 1]]"
+gbdt_compat_balanced,26,0.06896551724137931,1.8182639474487248,-0.11284736944016843,17,9,0,"[[""docres_deshadow"", 15], [""input_degraded"", 5], [""docres_input_blend_0.80"", 2], [""docres_input_blend_0.90"", 2], [""region_controller"", 1], [""docres_classical040_blend_0.90"", 1]]"
+extratrees_raw_prior,21,0.05570291777188329,2.7607361325169033,-0.11449352048796545,17,4,0,"[[""docres_deshadow"", 12], [""input_degraded"", 5], [""docres_input_blend_0.90"", 4]]"
+extratrees_compat_balanced,16,0.042440318302387266,3.3283667208850147,-0.11400866131452153,13,3,0,"[[""docres_deshadow"", 9], [""input_degraded"", 4], [""docres_input_blend_0.90"", 2], [""classical_shadow_0.40"", 1]]"

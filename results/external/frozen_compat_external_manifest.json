@@ -1,0 +1,67 @@
+[
+  {
+    "dataset": "mixeddoc",
+    "samples": 1837,
+    "splits": {
+      "train": 1083,
+      "val": 377,
+      "test": 377
+    },
+    "methods": [
+      "input",
+      "classical_shadow_0.40",
+      "docres_deshadow",
+      "docres_input_blend_0.90",
+      "docres_input_blend_0.80",
+      "docres_classical040_blend_0.90",
+      "region_controller"
+    ],
+    "qclasses": [
+      "classical_shadow_0.40",
+      "docres_deshadow",
+      "docres_input_blend_0.90",
+      "input"
+    ],
+    "teacher_counts": {
+      "classical_shadow_0.40": 10,
+      "docres_deshadow": 23,
+      "docres_input_blend_0.90": 17,
+      "input": 1
+    },
+    "teacher_samples": 51,
+    "params": {
+      "ssim_weight": 24.0,
+      "risk_penalty": 1.2,
+      "harm_penalty": 0.35
+    }
+  },
+  {
+    "dataset": "osr",
+    "samples": 237,
+    "splits": {
+      "train": 191,
+      "val": 46
+    },
+    "methods": [
+      "input",
+      "shadow_0.30",
+      "shadow_0.40",
+      "shadow_0.50",
+      "shadow_0.60"
+    ],
+    "qclasses": [
+      "shadow_0.30",
+      "shadow_0.40"
+    ],
+    "teacher_counts": {
+      "shadow_0.30": 59,
+      "shadow_0.40": 21
+    },
+    "teacher_samples": 80,
+    "params": {
+      "ssim_weight": 3.0,
+      "risk_penalty": 0.6,
+      "harm_penalty": 0.4
+    }
+  }
+]
