@@ -2,27 +2,39 @@
 
 ## Candidate-Bank Protocols
 
-Two MixedDoc protocols appear in the experiments:
+Two MixedDoc protocols are retained:
 
-1. Lightweight candidate bank without MMDIR official predictions.
-2. MMDIR-augmented candidate bank with `mmdir_official`.
-
-The manuscript should use the MMDIR-augmented protocol as the main MixedDoc comparison. The lightweight protocol is retained as an ablation because it isolates evidence-aware selection when only classical, DocRes, blend, and region candidates are available.
+1. A lightweight candidate bank without official MMDIR predictions, used for ablation and diagnostic analyses.
+2. An MMDIR-augmented candidate bank with `mmdir_official`, used for the main MixedDoc comparison.
 
 See:
 
 - `results/mixedoc/protocol_delta_audit.md`
 - `results/mixedoc/main_sota_table_mixeddoc.csv`
 
-## Main Scripts
+## Released Result Audit
 
-- `scripts/evaluate_mmdir_official_mixeddoc.py`: evaluates official MMDIR predictions under the same PSNR/SSIM/VCCRP protocol.
-- `scripts/train_mmdir_augmented_selector.py`: trains/evaluates the MMDIR-augmented selector.
-- `scripts/build_mmdir_frozen_compat_balanced_20260827.py`: evaluates raw prior versus frozen compatibility-balanced prior in Protocol B.
-- `scripts/build_frozen_compat_external_20260827.py`: validates frozen compatibility features on MixedDoc and OSR.
-- `scripts/build_semantic_compatibility_variants_20260827.py`: Historical-537 semantic compatibility variant analysis.
+The public package is designed to support aggregate-result verification without redistributing raw benchmark images. The fastest audit entrypoint is:
 
-## Important Limitation
+```bash
+python scripts/summarize_released_results.py
+```
 
-Some scripts require precomputed candidate metrics, official MMDIR predictions, or Qwen review logs. These are not fully redistributed because they can contain third-party data or generated image-derived artifacts. The final CSV summaries are provided for aggregate verification.
+End-to-end regeneration of every manuscript table requires:
 
+- raw datasets obtained from the original providers;
+- third-party restoration model checkpoints or official predictions;
+- precomputed candidate images or candidate metrics;
+- Qwen3-VL review logs for experiments involving semantic priors.
+
+## Hardware Environment
+
+The reported experiments used NVIDIA A100 80GB GPUs for the GPU runtime measurements and Qwen3-VL review service. Runtime claims in the released tables should be interpreted under that hardware setting.
+
+## Main Result Files
+
+- Historical-537 main grouped evaluation: `results/historical537/historical537_group_main_results.csv`
+- Historical-537 semantic-prior comparisons: `results/historical537/semantic_compatibility_heldout_summary.csv`
+- MixedDoc Protocol-B main table: `results/mixedoc/main_sota_table_mixeddoc.csv`
+- MixedDoc paired bootstrap: `results/mixedoc/mmdir_augmented_bootstrap.csv`
+- Runtime summary: `results/runtime_summary.csv`

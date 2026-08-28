@@ -2,20 +2,28 @@
 
 ## Code Availability
 
-The sanitized code used for candidate-bank evaluation, evidence extraction, semantic-prior analysis, selector training, paired bootstrap statistics, and final table generation is included in this repository.
+This repository provides the public implementation components used to audit the manuscript results:
 
-The repository excludes private server scripts, credentials, local absolute paths, raw datasets, and third-party model weights.
+- candidate-bank definitions;
+- source-relative evidence extraction, including VCCRP;
+- region-aware candidate synthesis;
+- semantic-prior calibration utilities;
+- utility-based candidate selection;
+- paired statistical analysis helpers;
+- released split manifests and aggregate result tables.
+
+Private server launch scripts, credentials, local absolute paths, raw datasets, third-party model weights, downloaded archives, and manuscript drafts are excluded.
 
 ## Dataset Availability
 
-The experiments use public or separately distributed document-image datasets. Due to licensing and redistribution restrictions, raw images are not included in this repository. Users should obtain each dataset from its original provider.
+Raw image datasets are not redistributed in this repository. They should be obtained from the original providers and used under their respective licenses. The repository provides split manifests and result tables for auditability.
 
 Datasets and sources used in the manuscript include:
 
-- MixedDoc / MMDIR benchmark: obtain from the original MMDIR project or dataset provider.
-- Historical-537: constructed as a grouped historical-document evaluation set from the sources described in the manuscript. The group split manifest is provided in `splits/historical537_group_split_manifest.csv`.
-- OSR: external shadow-removal evaluation protocol; split manifest is provided when available.
-- MTHv2, MACR, Kligler, Jung, DIBCO subsets: obtain from their original sources or according to the access conditions described in the manuscript.
+- MixedDoc / MMDIR benchmark, obtained from the original MMDIR project or dataset provider.
+- Historical-537, a grouped evaluation set assembled from the historical-document sources described in the manuscript.
+- OSR, MTHv2, MACR, Kligler, Jung, and DIBCO subsets, obtained from their original sources or access channels.
+- `compound-proxy`, a synthetic compound-degradation subset generated from clean historical source pages using the protocol in `configs/compound_proxy_generation_config.json` and `scripts/generate_compound_proxy.py`.
 
 ## Split Manifests
 
@@ -26,6 +34,7 @@ Provided split files:
 - `splits/historical537_group_split_manifest.csv`
 - `splits/historical537_group_split_counts.csv`
 - `splits/historical537_group_split_protocol.json`
+- `splits/osr_split_manifest.csv`
 
 The MixedDoc split follows:
 
@@ -45,11 +54,4 @@ otherwise -> training
 
 ## Result Tables
 
-Final result CSV files are included under `results/`. These files are sufficient to audit the reported aggregate scores and paired-statistical claims without redistributing original images.
-
-## Suggested Manuscript Statement
-
-The following statement can be adapted for MDPI submission:
-
-> The code for evidence extraction, candidate selection, semantic-prior analysis, and statistical evaluation is available at the project GitHub repository. The raw datasets and third-party restoration outputs are not redistributed due to licensing restrictions and should be obtained from their original providers. The repository includes split manifests and result tables needed to reproduce the reported aggregate analyses.
-
+Final result CSV files are included under `results/`. These files are sufficient to audit the reported aggregate scores and paired-statistical claims without redistributing original images or third-party model predictions.

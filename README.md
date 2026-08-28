@@ -1,19 +1,19 @@
 # HistRestore
 
-Code and result artifacts for **HistRestore: an evidence-constrained adaptive restoration framework for historical document images**.
+Code and result artifacts for **HistRestore: evidence-constrained restoration selection with vision-language priors for historical document images**.
 
-This public release is a reproducibility package for the manuscript. It contains the reusable HistRestore implementation modules, sanitized experiment scripts, split manifests, candidate-bank configurations, and final result tables. It does **not** include original datasets, third-party model weights, private server scripts, or downloaded benchmark archives.
+This public release is a reproducibility and audit package for the manuscript. It contains reusable HistRestore modules, split manifests, candidate-bank configurations, synthetic-degradation generation code, and final result tables. It does **not** include original datasets, third-party model weights, private server scripts, downloaded benchmark archives, or generated manuscript drafts.
 
 ## What Is Included
 
-- `scripts/`: core evaluation and analysis scripts used for the paper tables.
+- `scripts/`: public scripts for compound-proxy generation and released-result summarization.
 - `src/histrestore/`: reusable project code for candidate-bank construction, evidence extraction, region-aware candidate synthesis, distilled semantic priors, utility selection, and paired statistical tests.
 - `results/`: final CSV summaries, paired statistics, runtime summaries, and audit reports.
 - `splits/`: group split and stable-hash split manifests.
-- `configs/`: candidate-bank definitions.
-- `docs/`: data availability, reproducibility notes, and upload instructions.
+- `configs/`: candidate-bank and compound-proxy generation definitions.
+- `docs/`: data availability and reproducibility notes.
 
-The `src/histrestore/` package contains the method-level implementation skeleton, while `scripts/` contains paper-table entrypoints that assemble the released CSVs and precomputed candidate metrics into the reported protocols.
+The `src/histrestore/` package contains the method-level implementation used by the release. Some end-to-end benchmark runs require third-party datasets, model checkpoints, official predictions, or Qwen review logs that cannot be redistributed here; the released CSV tables are provided to audit the aggregate manuscript results.
 
 ## Main Reproducibility Targets
 
@@ -49,20 +49,23 @@ Optional dependencies are needed only for specific components:
 
 ## Data Preparation
 
-This repository does not redistribute datasets or model weights. Download datasets from their original providers and place generated metric files under a local `data/` or `outputs/` directory following the paths described in `docs/DATA_AVAILABILITY.md`.
+This repository does not redistribute datasets or model weights. Download datasets from their original providers and place regenerated artifacts in a local working directory following the policies described in `docs/DATA_AVAILABILITY.md`.
 
 For manuscript verification without raw images, use the provided CSV result tables in `results/`.
 
-## Reproducing Reported Tables
+## Auditing Released Tables
 
-Examples:
+The release includes final CSV summaries. To print the main released tables:
 
 ```bash
-python scripts/build_mmdir_frozen_compat_balanced_20260827.py
-python scripts/build_frozen_compat_external_20260827.py
+python scripts/summarize_released_results.py
 ```
 
-Some scripts expect precomputed candidate metrics and official predictions. These files are not redistributed when their source datasets or model outputs are subject to third-party licensing.
+To regenerate the compound-proxy subset from clean source pages:
+
+```bash
+python scripts/generate_compound_proxy.py --clean-root path/to/clean_pages --out-root path/to/compound_proxy
+```
 
 ## Repository Hygiene
 

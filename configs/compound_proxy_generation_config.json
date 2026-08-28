@@ -1,0 +1,30 @@
+{
+  "subset_name": "compound-proxy",
+  "clean_source_pages": {
+    "description": "Clean historical page images from the Jung source pages used in Historical-537.",
+    "unique_source_pages": 60,
+    "variants_per_source_page_in_historical537": 2,
+    "samples_in_historical537": 120
+  },
+  "generation": {
+    "script": "scripts/generate_compound_proxy.py",
+    "seed": 20260805,
+    "max_side": 1600,
+    "default_variants": 3,
+    "operator_count_probabilities": {
+      "1": 0.30,
+      "2": 0.50,
+      "3": 0.20
+    },
+    "severity_range": [0.25, 0.90],
+    "operators": [
+      "perspective",
+      "shadow",
+      "blur",
+      "low_contrast_yellowing",
+      "bleed_through_stain"
+    ],
+    "jpeg_compression_probability": 0.35,
+    "jpeg_quality_range": [35, 75]
+  }
+}
