@@ -1,0 +1,7 @@
+selector,n,psnr,ssim
+NIQE selector full-22,113,17.945,0.848
+MUSIQ selector full-22,113,14.553,0.7896
+DeQA-Doc selector full-22,113,15.626,0.8293
+NIQE selector restricted16,113,17.822373759108853,0.847149720497891
+MUSIQ selector restricted16,113,14.20557799367804,0.7819224561737702
+DeQA-Doc selector restricted16,113,15.551554813143683,0.8294550061753366

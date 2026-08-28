@@ -1,4 +1,4 @@
-﻿"dataset","sample_id","source_page_id","split"
+"dataset","sample_id","source_page_id","split"
 "compound_proxy","000000_jung_001_v00","jung_001","train"
 "compound_proxy","000000_jung_001_v01","jung_001","train"
 "compound_proxy","000001_jung_002_v00","jung_002","train"

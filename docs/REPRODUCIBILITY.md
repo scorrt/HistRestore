@@ -1,40 +1,30 @@
 # Reproducibility Notes
 
-## Candidate-Bank Protocols
+## Historical-537
 
-Two MixedDoc protocols are retained:
+The final split contains 424 training pages and 113 source-group-held-out pages. Variants derived from the same source page remain in the same partition. The exact manifest is `splits/historical537_group_split_manifest.csv`.
 
-1. A lightweight candidate bank without official MMDIR predictions, used for ablation and diagnostic analyses.
-2. An MMDIR-augmented candidate bank with `mmdir_official`, used for the main MixedDoc comparison.
+The nested candidate order for K = 6, 10, 14, 18, and 22 is `configs/historical537_nested_candidate_order.csv`. Per-page candidate measurements and final evidence-only/direct-review selections are under `results/per_page/`.
 
-See:
+## MixedDoc
 
-- `results/mixedoc/protocol_delta_audit.md`
-- `results/mixedoc/main_sota_table_mixeddoc.csv`
+The fixed split contains 1083 training, 377 validation, and 377 test pages. `configs/mixeddoc_candidate_banks.json` defines the seven-candidate lightweight bank and the eight-candidate MMDIR-augmented bank. The main test results are `results/mixedoc/main_results.csv` and `results/mixedoc/paired_bootstrap.csv`.
 
-## Released Result Audit
+## VCCRP
 
-The public package is designed to support aggregate-result verification without redistributing raw benchmark images. The fastest audit entrypoint is:
+`src/histrestore/evidence.py` implements the manuscript definition:
 
-```bash
-python scripts/summarize_released_results.py
+```text
+0.45 * (1 - edge_jaccard)
++ 0.25 * min(4 * foreground_shift, 1)
++ 0.20 * min(3 * contrast_shift, 1)
++ 0.10 * min(4 * mean_shift, 1)
 ```
 
-End-to-end regeneration of every manuscript table requires:
+## Region-aware candidate
 
-- raw datasets obtained from the original providers;
-- third-party restoration model checkpoints or official predictions;
-- precomputed candidate images or candidate metrics;
-- Qwen3-VL review logs for experiments involving semantic priors.
+`src/histrestore/region.py` implements the fixed spatial operating point. The raw alpha map is clipped to `[0.68, 0.98]`, Gaussian-smoothed with `sigma = 3`, and then applied to the source-to-DocRes residual.
 
-## Hardware Environment
+## Hardware
 
-The reported experiments used NVIDIA A100 80GB GPUs for the GPU runtime measurements and Qwen3-VL review service. Runtime claims in the released tables should be interpreted under that hardware setting.
-
-## Main Result Files
-
-- Historical-537 main grouped evaluation: `results/historical537/historical537_group_main_results.csv`
-- Historical-537 semantic-prior comparisons: `results/historical537/semantic_compatibility_heldout_summary.csv`
-- MixedDoc Protocol-B main table: `results/mixedoc/main_sota_table_mixeddoc.csv`
-- MixedDoc paired bootstrap: `results/mixedoc/mmdir_augmented_bootstrap.csv`
-- Runtime summary: `results/runtime_summary.csv`
+GPU runtime measurements use NVIDIA A100 GPUs with 80 GB memory per GPU. Direct Qwen3-VL review uses two-GPU tensor parallelism.

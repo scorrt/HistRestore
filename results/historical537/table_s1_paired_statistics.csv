@@ -1,0 +1,3 @@
+comparison,metric,n,mean_delta,ci95_low,ci95_high,paired_t_p,wilcoxon_p,cohen_dz,win_rate
+Direct structured review vs strongest fixed blend,PSNR,113,0.4304,-0.004,0.8994,0.064,0.049,0.176,0.469
+Direct structured review vs evidence-only GBDT,PSNR,113,0.3239,0.0107,0.7146,0.076,0.038,0.168,0.186

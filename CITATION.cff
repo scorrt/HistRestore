@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "HistRestore: Evidence-Constrained Restoration Selection with Vision-Language Priors for Historical Document Images"
-message: "Please cite the associated manuscript if you use this code."
+message: "Please cite the associated manuscript when using this code or released results."
 authors:
   - family-names: "Li"
     given-names: "Xueju"
@@ -8,3 +8,4 @@ authors:
     given-names: "Wenlian"
 year: 2026
 license: "MIT"
+repository-code: "https://github.com/scorrt/HistRestore"

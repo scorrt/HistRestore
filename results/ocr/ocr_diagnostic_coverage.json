@@ -1,0 +1,19 @@
+{
+  "available": true,
+  "sample_count": 50,
+  "row_count": 250,
+  "methods": [
+    "classical_shadow_0.40",
+    "docres_deshadow",
+    "input",
+    "no_qwen_selected",
+    "qwen_selected"
+  ],
+  "rows_per_method": {
+    "classical_shadow_0.40": 50,
+    "docres_deshadow": 50,
+    "input": 50,
+    "no_qwen_selected": 50,
+    "qwen_selected": 50
+  }
+}

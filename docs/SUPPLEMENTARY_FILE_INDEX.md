@@ -1,35 +1,29 @@
 # Supplementary File Index
 
-This index maps the manuscript's Supplementary Materials statement to files in
-the MDPI supplementary package.
+This index maps the manuscript Supplementary Materials statement to the released repository files.
 
-## Supplementary Appendix
+## Appendix S1
 
-- Appendix S1: `docs/Supplementary_Appendix_S1.md`
+- Qwen3-VL Prompt A–E templates and JSON schemas: `docs/Supplementary_Appendix_S1.md`
+- Label mapping used for prior distillation: `configs/qwen_label_mapping.json`
 
-## Supplementary Tables
+## Tables S1–S3
 
-- Table S1: `results/historical537/statistical_tests_report.md`
-- Table S2: `configs/historical537_22_candidate_names.csv`
-- Table S3: `splits/historical537_group_split_manifest.csv`
+- **Table S1 — Paired Historical-537 statistics:** `results/historical537/table_s1_paired_statistics.csv`
+- **Table S2 — Nested candidate order for K = 6, 10, 14, 18, 22:** `configs/historical537_nested_candidate_order.csv`
+- **Table S3 — Historical-537 split manifest:** `splits/historical537_group_split_manifest.csv` and `splits/historical537_group_split_counts.csv`
 
-## Additional Supplementary Result Files
+## Additional supplementary results
 
-- Restricted-bank NR-IQA results: `results/historical537/historical537_group_main_results.csv`
-- Source-wise and selector-family robustness:
-  `results/historical537/semantic_compatibility_heldout_summary.csv`
-- VCCRP sensitivity and semantic compatibility analyses:
-  `results/historical537/semantic_compatibility_paired_stats.csv`
-- MixedDoc candidate-bank analyses:
-  `results/mixedoc/main_sota_table_mixeddoc.csv`,
-  `results/mixedoc/mmdir_augmented_split_summary.csv`,
-  `results/mixedoc/frozen_compat_balanced_summary.csv`,
-  `results/mixedoc/frozen_compat_balanced_paired_stats.csv`,
-  `results/mixedoc/leave_mmdir_stats.csv`
-- OSR/external semantic-prior analyses:
-  `results/external/frozen_compat_external_summary.csv`,
-  `results/external/frozen_compat_external_paired_stats.csv`
-- Runtime measurements: `results/runtime_summary.csv`
-
-Raw datasets, third-party restoration outputs, model weights, and private server
-files are not included.
+- Restricted-bank NR-IQA: `results/nriqa/historical537_nriqa_full22_restricted16.csv`
+- Source-wise robustness: `results/historical537/source_wise_robustness.csv`
+- Selector-family robustness: `results/selector_family/historical537_selector_family_results.csv` and `results/selector_family/historical537_mlp_10seeds_summary.csv`
+- Candidate-bank size sensitivity: `results/sensitivity/candidate_bank_size_sensitivity.csv`
+- VCCRP coefficient sensitivity: `results/sensitivity/historical537_vccrp_coefficient_sensitivity.csv`
+- Semantic gating: `results/semantic/historical537_semantic_gating_summary.csv`
+- Semantic compatibility ablation: `results/semantic/compatibility_ablation_summary.csv` and `results/semantic/compatibility_ablation_paired_stats.csv`
+- MixedDoc lightweight/MMDIR-augmented audit: `results/mixedoc/`
+- OSR/external semantic-prior analysis: `results/semantic/osr_semantic_prior_summary.csv`
+- OCR diagnostics: `results/ocr/`
+- Runtime measurements: `results/runtime/runtime_summary.csv`
+- Per-page Historical-537 audit data: `results/per_page/`

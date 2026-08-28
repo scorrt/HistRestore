@@ -1,0 +1,7 @@
+{
+  "use_docres": "docres_deshadow",
+  "blend_docres": "docres_input_blend_0.90",
+  "use_classical": "classical_shadow_0.40",
+  "preserve_input": "input",
+  "manual_review": "classical_shadow_0.40"
+}

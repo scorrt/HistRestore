@@ -1,4 +1,4 @@
-﻿"comparison","metric","n","mean_delta","ci95_low","ci95_high","win_rate"
+"comparison","metric","n","mean_delta","ci95_low","ci95_high","win_rate"
 "HistRestore+MMDIR vs MMDIR official","psnr","377","0.14770020813396034","0.0381","0.2681","0.03978779840848806"
 "HistRestore+MMDIR vs MMDIR official","ssim","377","5.889824277842393e-05","-0.0007702815833079087","0.0007972385941829226","0.034482758620689655"
 "HistRestore+MMDIR vs MMDIR official","risk","377","-0.005778178897037517","-0.008622805937234102","-0.003230988860331838","0.050397877984084884"

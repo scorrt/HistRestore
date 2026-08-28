@@ -68,10 +68,10 @@ def extract_pair_evidence(source, candidate) -> EvidenceVector:
 
     edge_discontinuity = 1.0 - edge_jaccard
     content_risk = (
-        0.45 * float(_rho(edge_discontinuity))
-        + 0.25 * float(_rho(foreground_shift))
-        + 0.20 * float(_rho(contrast_shift))
-        + 0.10 * float(_rho(mean_shift))
+        0.45 * float(edge_discontinuity)
+        + 0.25 * float(_rho(4.0 * foreground_shift))
+        + 0.20 * float(_rho(3.0 * contrast_shift))
+        + 0.10 * float(_rho(4.0 * mean_shift))
     )
 
     return EvidenceVector(

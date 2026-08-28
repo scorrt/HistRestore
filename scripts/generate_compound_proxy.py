@@ -145,7 +145,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--clean-root", type=Path, required=True)
     parser.add_argument("--out-root", type=Path, required=True)
-    parser.add_argument("--variants", type=int, default=3)
+    parser.add_argument("--variants", type=int, default=2)
     parser.add_argument("--max-side", type=int, default=1600)
     parser.add_argument("--seed", type=int, default=20260805)
     parser.add_argument("--max-images", type=int, default=0)

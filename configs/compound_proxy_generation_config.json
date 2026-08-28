@@ -10,7 +10,7 @@
     "script": "scripts/generate_compound_proxy.py",
     "seed": 20260805,
     "max_side": 1600,
-    "default_variants": 3,
+    "default_variants": 2,
     "operator_count_probabilities": {
       "1": 0.30,
       "2": 0.50,

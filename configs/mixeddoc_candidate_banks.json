@@ -1,0 +1,21 @@
+{
+  "lightweight_7": [
+    "input_degraded",
+    "classical_shadow_0.40",
+    "docres_deshadow",
+    "docres_input_blend_0.80",
+    "docres_input_blend_0.90",
+    "docres_classical040_blend_0.90",
+    "region_controller"
+  ],
+  "mmdir_augmented_8": [
+    "input_degraded",
+    "classical_shadow_0.40",
+    "docres_deshadow",
+    "docres_input_blend_0.80",
+    "docres_input_blend_0.90",
+    "docres_classical040_blend_0.90",
+    "region_controller",
+    "mmdir_official"
+  ]
+}

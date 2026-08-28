@@ -1,3 +1,0 @@
-method,measured,status,gpu,max_side,batch_size,warmup_iterations,measured_iterations,mean_latency_ms,median_latency_ms,p95_latency_ms,throughput_pages_per_s,peak_memory_allocated_gb,peak_memory_reserved_gb,note
-DocRes deshadowing,yes,measured,NVIDIA A100 80GB,960,1,5,30,299.5385,302.6784,324.0289,3.3385,3.0539,5.5371,"Single-page end-to-end inference including prompt construction, network forward pass, and post-processing."
-MMDIR official,no,not_measured,NVIDIA A100 80GB,960,1,,,,,,,,,"Official public materials used in this study provide benchmark predictions, but no runnable inference code/checkpoint was available in the accessible repository/container; latency/VRAM is therefore not claimed."

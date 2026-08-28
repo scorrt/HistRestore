@@ -24,9 +24,10 @@ def content_map(degraded):
 def alpha_map(degraded, alpha_min=0.68, alpha_max=0.98):
     s = shadow_map(degraded)
     c = content_map(degraded)
-    alpha = 0.82 + 0.18 * s * (1.0 - c) - 0.10 * c
-    alpha = cv2.GaussianBlur(alpha, (0, 0), 1.0)
-    return np.clip(alpha, alpha_min, alpha_max).astype(np.float32)
+    alpha_raw = 0.82 + 0.18 * s * (1.0 - c) - 0.10 * c
+    alpha = np.clip(alpha_raw, alpha_min, alpha_max)
+    alpha = cv2.GaussianBlur(alpha, (0, 0), 3.0)
+    return alpha.astype(np.float32)
 
 
 def build_region_candidate(degraded, base_restored):
@@ -42,4 +43,3 @@ def build_region_candidate(degraded, base_restored):
         alpha = alpha[..., None]
     y = degraded.astype(np.float32) + alpha * (base_restored.astype(np.float32) - degraded.astype(np.float32))
     return np.clip(y, 0, 255).astype(np.uint8), alpha.squeeze()
-
